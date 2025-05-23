@@ -22,3 +22,9 @@ create table Professor(
     foreign key (user_id) peferences User(user_id)
 );
 
+create table Menu(
+    menu_id int primary key AUTO_INCREMENT,
+    food_name varchar(30) not null ,
+    price int not null ,
+    available_date DATE not null
+);
