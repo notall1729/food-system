@@ -10,7 +10,7 @@ create table Student(
     user_id int not null ,
     student_number varchar(8) not null ,
     major varchar(30) not null ,
-    foreign key (user_id) peferences User(user_id)
+    foreign key (user_id) references User(user_id)
 );
 
 create table Professor(
@@ -19,7 +19,7 @@ create table Professor(
     personnel_number varchar(12) unique not null ,
     department varchar(30) not null ,
     academic_rank varchar(20) not null ,
-    foreign key (user_id) peferences User(user_id)
+    foreign key (user_id) references User(user_id)
 );
 
 create table Menu(
@@ -33,7 +33,7 @@ create table Orders(
     order_id int primary key AUTO_INCREMENT,
     user_id int not null ,
     order_date timestamp default current_timestamp,
-    foreign key (user_id) peferences User(user_id)
+    foreign key (user_id) references User(user_id)
 );
 
 create table OrderItem(
@@ -41,6 +41,6 @@ create table OrderItem(
     order_id int not null ,
     menu_id int not null ,
     quantity int not null ,
-    foreign key (order_id) peferences Orders(order_id),
-    foreign key (menu_id) peferences Menu(menu_id)
+    foreign key (order_id) references Orders(order_id),
+    foreign key (menu_id) references Menu(menu_id)
 );
