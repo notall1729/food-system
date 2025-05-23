@@ -35,3 +35,12 @@ create table Orders(
     order_date timestamp default current_timestamp,
     foreign key (user_id) peferences User(user_id)
 );
+
+create table OrderItem(
+    order_item_id int primary key AUTO_INCREMENT,
+    order_id int not null ,
+    menu_id int not null ,
+    quantity int not null ,
+    foreign key (order_id) peferences Orders(order_id),
+    foreign key (menu_id) peferences Menu(menu_id)
+);
