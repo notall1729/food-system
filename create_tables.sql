@@ -28,3 +28,10 @@ create table Menu(
     price int not null ,
     available_date DATE not null
 );
+
+create table Orders(
+    order_id int primary key AUTO_INCREMENT,
+    user_id int not null ,
+    order_date timestamp default current_timestamp,
+    foreign key (user_id) peferences User(user_id)
+);
